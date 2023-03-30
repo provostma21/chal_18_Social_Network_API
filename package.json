@@ -1,0 +1,26 @@
+{
+  "name": "challenge_18_social_network_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/provostma21/chal_18_Social_Network_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/provostma21/chal_18_Social_Network_API/issues"
+  },
+  "homepage": "https://github.com/provostma21/chal_18_Social_Network_API#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
