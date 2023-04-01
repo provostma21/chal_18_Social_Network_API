@@ -1,15 +1,42 @@
 const { Schema, model } =require('mongoose');
 
+const reactionSchema = new Schema(
+    {
+        reactionId: {
+            // type: Mongoose's ObjectId data type
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
+            // Default value set to new ObjectId
+        },
+        reactionBody: {
+            type: String,
+            required: true,
+            maxlength: 280,
+        },
+        username: {
+            type: String,
+            required: true,
+        },
+        // createdAt: {
+        //     Type: Date,
+        //     default: () => Date.now(),
+        //     // Use getter method to format timestamp on query
+        },
+    // }
+);
+
 
 const thoughtSchema = new Schema(
     {
         thoughtText: {
             type: String,
             required: true,
-            // length: 1-280
+            minlength: 1,
+            maxlength: 280,
         },
         createdAt: {
-            // Date:
+            type: Date,
+            default: Date.now,
             // Set default calue to current timestamp
             // Use getter method to format timestamp on query
         },
@@ -17,12 +44,22 @@ const thoughtSchema = new Schema(
             type: String,
             required: true,
         },
-        reactions: {
+        reactions: [reactionSchema],
             // Array of nested documents created with reactionSchema
-            // reactionCount retrieves length of though's reaction array field on query
+            // reactionCount retrieves length of thought's reaction array field on query
+        
+    },
+    {
+        toJSON: {
+            virtuals: true,
         },
+        id: false,
     }
 );
+
+thoughtSchema.virtual('reactionCount').get(function () {
+    return this.reactions.length;
+});
 
 const Thought = model('thought', thoughtSchema);
 
