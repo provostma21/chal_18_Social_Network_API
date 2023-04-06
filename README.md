@@ -12,11 +12,15 @@ Make sure to use "npm install" prior to usage. This will install any dependencie
 
 Here is a video walkthrough to assist you in navigating the API.
 
-![Video Walkthrough][VIdeo]
+https://user-images.githubusercontent.com/107372103/230247870-2d21d005-fe0c-4cc8-9de4-678c0933e822.mp4
 
 ## Credits
 
 Matthew Provost (creator): https://github.com/provostma21
+
+
+
+
 
 
 
