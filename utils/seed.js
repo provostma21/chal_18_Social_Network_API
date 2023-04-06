@@ -10,14 +10,14 @@ connection.once('open', async () => {
   await User.deleteMany({});
 
   const users = getRandomUsers(10)
-  const thoughts = getRandomUsers(10);
+  // const thoughts = getRandomUsers(10);
 
   await User.collection.insertMany(users);
-  await Thought.collection.insertMany(thoughts);
+  // await Thought.collection.insertMany(thoughts);
 
 
   console.table(users);
-  console.table(thoughts);
+  // console.table(thoughts);
   console.info('Seeding complete! 🌱');
   process.exit(0);
 });

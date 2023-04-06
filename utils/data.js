@@ -108,16 +108,16 @@ const getRandomUsers = (int) => {
     for (let i = 0; i < int; i++) {
       const username = getRandomName();
       const email = username + getRandomArrItem(domains);
-      const thoughtText = getRandomArrItem(thoughtBodies);
-      const thoughts = [thoughtText];
-      const reactions = getRandomArrItem(possibleReactions);
+      // const thoughtText = getRandomArrItem(thoughtBodies);
+      const thoughts = getRandomArrItem(thoughtBodies);
+      // const reactions = getRandomArrItem(possibleReactions);
       if (!results.includes(username)) {
         results.push({
           username,
           email,
           thoughts,
-          thoughtText,
-          reactions,
+          // thoughtText,
+          // reactions,
         });
       };
     }
@@ -125,17 +125,17 @@ const getRandomUsers = (int) => {
   };
   
   
-//   const getRandomThought = (int) => {
-//     let results = [];
-//     for (let i = 0; i < int; i++) {
-//       results.push({
-//         thoughtText: getRandomArrItem(thoughtBodies),
-//         username: getRandomArrItem(userIds),
-//         reactions: [...getThoughtReaction(2)],
-//       });
-//     }
-//     return results;
-//   };
+  // const getRandomThought = (int) => {
+  //   let results = [];
+  //   for (let i = 0; i < int; i++) {
+  //     results.push({
+  //       thoughtText: getRandomArrItem(thoughtBodies),
+  //       username: getRandomArrItem(),
+  //       reactions: [...getThoughtReaction(2)],
+  //     });
+  //   }
+  //   return results;
+  // };
 
 //   const getThoughtReaction = (int) => {
 //     if (int === 1) {
@@ -151,4 +151,4 @@ const getRandomUsers = (int) => {
 //     return results;
 //   };
 
-  module.exports = { getRandomName, getRandomUsers };
+  module.exports = { getRandomName, getRandomUsers};
